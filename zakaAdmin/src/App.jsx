@@ -19,28 +19,28 @@ function App() {
     <div className="App">
   
       <section id="sidebar"  className={isActive ? 'hide': null} >
-        <link href="/" className="brand">
+        <a href="/" className="brand">
           <i className='bx bxs-smile'></i>
           <span className="text">Zaka</span>
-        </link>
+        </a>
         <ul className="side-menu top">
           <li className="active">
-            <link to="#">
+            <a to="#">
               <i className='bx bxs-dashboard' ></i>
               <span className="text">Dashboard</span>
-            </link>
+            </a>
           </li>
           <li>
-            <link to="employee">
+            <a to="employee">
               <i className='bx bxs-group' ></i>
               <span className="text">Employee</span>
-            </link>
+            </a>
           </li>
           <li>
-            <link to="rider">
+            <a to="rider">
               <i className='bx bxs-group' ></i>
               <span className="text">Rider</span>
-            </link>
+            </a>
           </li>
           <li>
             <a href="product">
