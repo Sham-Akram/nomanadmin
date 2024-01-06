@@ -1,6 +1,16 @@
 import React from 'react'
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
 
 const Rider = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
   return (
     <div>
     <main>
@@ -17,10 +27,12 @@ const Rider = () => {
              </li> */}
            </ul>
          </div>
-         <a href="#" class="btn-download">
-           <i class='bx bxs-cloud-download' ></i>
-           <span class="text">Download PDF</span>
-         </a>
+         <a href="#" className="btn-download">
+            <i className='bx bxs-cloud-download' ></i>
+            <span  variant="primary" onClick={handleShow}>
+              Add Rider
+            </span>
+          </a>
        </div>
 
        <ul class="box-info">
@@ -28,21 +40,21 @@ const Rider = () => {
            <i class='bx bxs-calendar-check' ></i>
            <span class="text">
              <h3>1020</h3>
-             <p>New Order</p>
+             <p>New Rider</p>
            </span>
          </li>
          <li>
            <i class='bx bxs-group' ></i>
            <span class="text">
              <h3>2834</h3>
-             <p>Visitors</p>
+             <p>Today Rider</p>
            </span>
          </li>
          <li>
            <i class='bx bxs-dollar-circle' ></i>
            <span class="text">
              <h3>$2543</h3>
-             <p>Total Sales</p>
+             <p>Total Rider</p>
            </span>
          </li>
        </ul>
@@ -53,7 +65,7 @@ const Rider = () => {
 
          <div class="order">
            <div class="head">
-             <h3>Recent Orders</h3>
+             <h3>All Rider</h3>
              <i class='bx bx-search' ></i>
              <i class='bx bx-filter' ></i>
            </div>
@@ -120,7 +132,7 @@ const Rider = () => {
 
          <div class="todo">
            <div class="head">
-             <h3>Todos</h3>
+             <h3>Today Rider</h3>
              <i class='bx bx-plus' ></i>
              <i class='bx bx-filter' ></i>
            </div>
@@ -152,6 +164,88 @@ const Rider = () => {
 
 
      </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     {/* /// ########################### bootstarp model ########################## */}
+     <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Add Rider Data</Modal.Title>
+
+        </Modal.Header>
+        <Modal.Body>
+          {/* Woohoo, you are reading this text in a modal! */}
+     
+
+
+          <Form>
+          <Form.Group className="mb-1" controlId="exampleForm.ControlInput1">
+          <Form.Label className='text-primary '>Enter Rider Name</Form.Label>
+      <Form.Control type="text" placeholder="Noman" />
+       
+      </Form.Group>
+
+      <Form.Group className="mb-1" controlId="exampleForm.ControlInput1">
+        <Form.Label className='text-primary '>Enter Rider Email address</Form.Label>
+        <Form.Control type="email" placeholder="noman@example.com" />
+      </Form.Group>
+  
+      <Form.Group className="mb-1" controlId="exampleForm.ControlInput1">
+        <Form.Label className='text-primary '>Enter Rider CNIC</Form.Label>
+        <Form.Control type="text" placeholder="0000-00000000-00" />
+      </Form.Group>
+
+      <Form.Group className="mb-1" controlId="exampleForm.ControlInput1">
+        <Form.Label className='text-primary '>Enter Rider Password</Form.Label>
+        <Form.Control
+        type="password"
+        id="inputPassword5"
+        aria-describedby="passwordHelpBlock"
+        placeholder="xxxxxxxxxxxxxx"
+      />
+      <Form.Text id="passwordHelpBlock" muted>
+        Your password must be 8-20 characters long
+      </Form.Text>
+      </Form.Group>
+
+      <Form.Group controlId="formFile" className="mb-1">
+      <Form.Label className='text-primary '>Add Rider Image</Form.Label>
+    
+        <Form.Control type="file" />
+      </Form.Group>
+     
+    </Form>
+          
+        </Modal.Body>
+
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Add Rider
+          </Button>
+        </Modal.Footer>
+      </Modal>
+ {/* /// ########################### bootstarp model ########################## */}
+
+
+
+
+     
  </div>
   )
 }

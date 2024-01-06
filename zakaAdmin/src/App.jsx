@@ -16,63 +16,69 @@ function App() {
     setActive(!isActive);
   };
   return (
+    <BrowserRouter>
     <div className="App">
-  
+
       <section id="sidebar"  className={isActive ? 'hide': null} >
-        <a href="/" className="brand">
-          <i className='bx bxs-smile'></i>
-          <span className="text">Zaka</span>
-        </a>
+        <Link to="/" className="brand">
+          <i className='bx '></i>
+          <span className="text">
+            <br />
+            <br />
+            <img src="../src\assets\Images\logo.png" width="180" className="p-4" alt="" />
+            
+            </span>
+        </Link>
         <ul className="side-menu top">
           <li className="active">
-            <a to="#">
+            <Link to="/">
               <i className='bx bxs-dashboard' ></i>
               <span className="text">Dashboard</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a to="employee">
+            <Link to="employee">
               <i className='bx bxs-group' ></i>
               <span className="text">Employee</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a to="rider">
+            <Link to="rider">
               <i className='bx bxs-group' ></i>
               <span className="text">Rider</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="product">
+            <Link to="product">
               <i className='bx bxs-category' ></i>
               <span className="text">Product</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="stock">
+            <Link to="stock">
               <i className='bx bxs-message-dots' ></i>
               <span className="text">Stock</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="order">
+            <Link to="order">
               <i className='bx bxs-group' ></i>
               <span className="text">Order</span>
-            </a>
+            </Link>
           </li>
         </ul>
         <ul className="side-menu">
           <li>
-            <a href="profile">
+            <Link to="profile">
               <i className='bx bxs-cog' ></i>
               <span className="text">profile</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="login" className="logout">
+            <Link to="login" className="logout">
               <i className='bx bxs-log-out-circle' ></i>
               <span className="text">Login</span>
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -111,7 +117,7 @@ function App() {
        {/* <Product /> */}
        {/* <Account/> */}
        {/* <Login /> */}
-  <BrowserRouter>
+  
   <Routes>
     <Route  path="/" element={<Dashboard /> }/>
     <Route  path="/employee" element={<Employee /> }/>
@@ -122,12 +128,13 @@ function App() {
     <Route  path="/profile" element={<Account/> }/>
     <Route  path="/login" element={<Login /> }/>
   </Routes>
-  </BrowserRouter>
+
 
        
       </section>
      
     </div>
+    </BrowserRouter>
   );
 }
 
